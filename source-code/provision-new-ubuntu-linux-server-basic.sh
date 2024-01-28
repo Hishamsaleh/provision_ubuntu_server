@@ -122,3 +122,14 @@ sudo apt-get install mssql-tools18 unixodbc-dev
 echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bash_profile
 echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
 source ~/.bashrc
+
+# Enable rewrite module
+sudo a2enmod rewrite
+
+# Enable SSL module
+sudo a2enmod ssl
+
+# Enable Proxy module
+sudo a2enmod proxy_http
+
+sudo a2enmod headers
