@@ -64,21 +64,8 @@ echo "## "
 echo
 
 
-pip3 install certbot certbot-dns-google-domains
+#pip3 install certbot certbot-dns-google-domains
 
-read -p 'dns_google_domains_access_token : ' access_token
-echo "dns_google_domains_access_token = $access_token" >> '/var/lib/letsencrypt/dns_google_domains_credentials.ini'
-
-certbot certonly \
--i 'apache' \
---authenticator 'dns-google-domains' \
---dns-google-domains-credentials '/var/lib/letsencrypt/dns_google_domains_credentials.ini' \
---server 'https://acme-v02.api.letsencrypt.org/directory' \
---email 'hishamsaleh@outlook.com' \
---noninteractive \
---agree-tos \
--d '*.hishamsaleh.com' \
--d 'hishamsaleh.com'
 
 echo
 echo "## "
@@ -133,3 +120,10 @@ sudo a2enmod ssl
 sudo a2enmod proxy_http
 
 sudo a2enmod headers
+
+#https://github.com/Nyr/wireguard-install/tree/master
+wget https://git.io/wireguard -O wireguard-install.sh && bash wireguard-install.sh
+
+#Interface: https://github.com/ngoduykhanh/wireguard-ui
+
+
